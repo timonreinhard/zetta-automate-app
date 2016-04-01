@@ -1,0 +1,18 @@
+# This turns the tv on
+tv-mood:
+  if:
+    Red Light: off
+    Security System: on
+  do:
+    backlight: turn-off 500
+    other thing: do nothing
+
+flood-the-basement:
+  if:
+    Red Light: on
+  do:
+    backlight: turn-on 500
+
+no-condition:
+  do:
+    wild thing: crazy stuff
