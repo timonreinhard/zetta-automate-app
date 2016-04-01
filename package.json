@@ -1,0 +1,26 @@
+{
+  "name": "zetta-automate-app",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timonreinhard/zetta-automate-app.git"
+  },
+  "author": "Timon Reinhard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/timonreinhard/zetta-automate-app/issues"
+  },
+  "homepage": "https://github.com/timonreinhard/zetta-automate-app#readme",
+  "dependencies": {
+    "parser-yaml": "^0.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "must": "^0.13.1"
+  }
+}
