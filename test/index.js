@@ -8,12 +8,9 @@ describe('Rules', function() {
 
   var rules;
 
-  beforeEach(function(done) {
-    rules = new Rules();
-    rules.load(__dirname + '/fixture.yml', function(err, result) {
-      expect(err).to.be.falsy();
-      expect(result).to.have.length(3);
-      done();
+  beforeEach(function() {
+    rules = new Rules({
+      filename: __dirname + '/fixture.yml'
     });
   });
 
@@ -47,7 +44,7 @@ describe('Rule', function() {
 
   beforeEach(function(done) {
     var rules = new Rules();
-    rules.load(__dirname + '/fixture.yml', function(err, result) {
+    rules.loadFile(__dirname + '/fixture.yml', function(err, result) {
       if (err) throw err;
       rule = result[0];
       done();
