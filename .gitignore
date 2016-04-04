@@ -1,2 +1,4 @@
 *.log
+.devices
+.peers
 node_modules
