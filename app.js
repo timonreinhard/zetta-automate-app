@@ -13,7 +13,7 @@ module.exports = function(server) {
   var deviceCommand = function(d) {
     var device = devices[d.device];
     if (!device) {
-      server.warn('Device ' + d.device + ' not found');
+      server.warn('Device ' + d.device + ' not found (Rule: ' + this.id + ')');
       return;
     }
     var command = d.action.split(' ');
@@ -23,7 +23,7 @@ module.exports = function(server) {
   var handleStateUpdate = function(device, state) {
     rules.getByTrigger(device.name, state).forEach(function(triggered) {
       server.info('Rule ' + triggered.id + ' triggered by ' + device.name + ':' + state);
-      triggered.getActions().forEach(deviceCommand);
+      triggered.getActions().forEach(deviceCommand, triggered);
     });
   };
 
@@ -38,7 +38,7 @@ module.exports = function(server) {
   var webhook = function(name, rule) {
     if (name !== 'trigger') return;
     server.info('Rule ' + rule.id + ' triggered by Webhook');
-    rule.getActions().forEach(deviceCommand);
+    rule.getActions().forEach(deviceCommand, rule);
   };
 
   var argo = server.httpServer.cloud.argo;
