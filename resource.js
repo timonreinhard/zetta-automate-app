@@ -1,7 +1,7 @@
 var Resource = module.exports = function(rules, webhook) {
   this.rules = rules;
   this.path = '/automate';
-  this.webhook = webhook;
+  this.webhook = (typeof webhook === 'function') ? webhook : null;
 };
 
 Resource.prototype.init = function(config) {
@@ -31,7 +31,7 @@ Resource.prototype.show = function(env, next) {
 
 Resource.prototype.trigger = function(env, next) {
   var rule = this.rules.get(env.route.params.id);
-  if (!rule) {
+  if (!rule || !this.webhook) {
     env.response.statusCode = 404;
   } else {
     env.response.statusCode = 204;
