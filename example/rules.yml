@@ -1,0 +1,21 @@
+window-open:
+  trigger:
+    Window: opened
+  action:
+    Red Light: turn-on
+
+window-closed:
+  trigger:
+    Window: closed
+  action:
+    Red Light: turn-off
+
+flood-the-basement:
+  trigger:
+    Water Sensor: off
+  action:
+    Pump: on
+
+no-condition:
+  action:
+    Wild Thing: Crazy stuff
