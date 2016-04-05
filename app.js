@@ -10,9 +10,6 @@ var rules = new Rules({
 module.exports = function(server) {
   var devices = {};
 
-  var argo = server.httpServer.cloud.argo;
-  argo.add(Resource, rules);
-
   var deviceCommand = function(d) {
     var device = devices[d.device];
     if (!device) {
@@ -37,4 +34,13 @@ module.exports = function(server) {
       handleStateUpdate(device, event.data);
     });
   });
+
+  var webhook = function(name, rule) {
+    if (name !== 'trigger') return;
+    server.info('Rule ' + rule.id + ' triggered by Webhook');
+    rule.getActions().forEach(deviceCommand);
+  };
+
+  var argo = server.httpServer.cloud.argo;
+  argo.add(Resource, rules, webhook);
 };
