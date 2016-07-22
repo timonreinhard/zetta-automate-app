@@ -31,7 +31,7 @@ Resource.prototype.show = function(env, next) {
 
 Resource.prototype.trigger = function(env, next) {
   var rule = this.rules.get(env.route.params.id);
-  if (!rule || !this.webhook) {
+  if (!rule || !this.webhook) {
     env.response.statusCode = 404;
   } else {
     env.response.statusCode = 204;
