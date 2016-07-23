@@ -28,6 +28,7 @@ Then create a custom `rules.yml` in the root of your project directory. See the 
 ## Rule Syntax
 
 ```yaml
+# rules.yml
 my_rule:
   trigger:
     Water Sensor: wet
