@@ -1,6 +1,6 @@
 # zetta-automate-app
 
-A minimal [Zetta](https://github.com/zettajs/zetta) application for automating devices based on simple if-than-that rules described by a [YAML](http://www.yaml.org) file.
+A minimal [Zetta](https://github.com/zettajs/zetta) application for automating devices based on simple if-than-that rules described by a [YAML](https://github.com/timonreinhard/zetta-automate-app/blob/master/example/rules.yml) file.
 
 ## Install
 
