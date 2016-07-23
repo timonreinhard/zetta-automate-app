@@ -60,7 +60,7 @@ Rules can be triggered externally by sending `POST` requests to `http://localhos
 
 ## Alternatives
 
-I quickly hacked together this module, because I love the ideas behind Zetta.js and wanted to do some [basic home automation](https://gist.github.com/timonreinhard/b6182a293867041bd4b667bbc339d807) with it. If you're looking for something way more sophisticated, you might like one of those fine FOSS projects:
+I quickly hacked together this module, because I love the simplicity behind Zetta.js and wanted to do some [basic home automation](https://gist.github.com/timonreinhard/b6182a293867041bd4b667bbc339d807) with it. If you're looking for something way more sophisticated, you might like one of those fine FOSS projects:
 
 * [openHAB](http://www.openhab.org) (Java)
 * [Home Assistent](https://home-assistant.io) (Python)
