@@ -41,6 +41,6 @@ module.exports = function(server) {
     rule.getActions().forEach(deviceCommand, rule);
   };
 
-  var argo = server.httpServer.cloud.argo;
-  argo.add(Resource, rules, webhook);
+  var titan = server.httpServer.cloud;
+  titan.add(Resource, rules, webhook);
 };

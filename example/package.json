@@ -6,7 +6,7 @@
   "author": "Timon Reinhard",
   "license": "MIT",
   "dependencies": {
-    "zetta": "^0.33.0",
+    "zetta": "^1.2.0",
     "zetta-led-mock-driver": "^0.9.0",
     "zetta-window-mock-driver": "^0.1.0"
   }
